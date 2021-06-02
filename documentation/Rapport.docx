@@ -45,14 +45,12 @@ Rapport projet Immob-Porto
 
 Pour le projet, j’ai eu à utiliser le framework Laravel, ainsi que des templates html, css, bootstrap4.
  
-Les diagrammes des cas d’utilisations et de classes sont fait dans un espace de travail modélio et est compressé et mis dans le dossier documentation. Donc pour l’avoir il faut avec modelio l’importer et l’ouvrir. Pour le modèl relationnel, cela a été fait avec pgmodeler. Toutefois une image de chaque diagrammes/modèle sera intégrée dans le dossier documentation et dans ce présent rapport. 
+Les diagrammes des cas d’utilisations et de classes sont fait dans un espace de travail modélio et est compressé et mis dans le dossier documentation. Donc pour l’avoir ainsi que les notes ajoutées aux cas d’utilisation, il faut ouvrir modelio et importer le fichier zippé. Pour le modèle relationnel, cela a été fait avec pgmodeler. Toutefois une image de chaque diagramme/modèle sera intégrée dans le dossier « documentation » et dans ce présent rapport. 
 
 Diagramme des cas d’utilisations
 
-Les différents cas d’utilisations montres les différentes fonctionnalités de l’application. Pour l’instant toutes les cas d’utilisations ne sont pas encore implémenté. Seuls ceux ayant rapport à un utilisateur ont été implémentés. Un utilisateur peut s’authentifier. 
 
-
-
+Les différents cas d’utilisations montrent les différentes fonctionnalités de l’application. Pour l’instant toutes les cas d’utilisations ne sont pas encore implémenté. Seuls ceux ayant rapport à un utilisateur ont été implémentés. Un utilisateur peut s’authentifier. 
 Diagramme des classes
 
 
@@ -62,7 +60,77 @@ Modèle
 
 
 Voilà le modèle relationnel.
-Pour l’instant je n’ai pas encore ajouté les cas d’utilisations pour gerer les annonces savoir : Ajouter une annonce, modifier…
+Pages
+
+Accueil :
+J’ai utilisé un conteneur bootstrap pour gérer,la barre de navigation. Mais quand j’utilise Google-chrome la couleur de la barre de navigation s’affiche et disparaît automatiquement. Ce même début sera répété pour les pages Achat, Location et présentation. Ce ser
+Essentiellement, la page d’accueil va servir à afficher la liste des annonces(achat, location, pour les offres et pour demandes) principalement les derniers ajoutés dans la base. Un petit formulaire est mis à disposition permettant de chercher une annonce sur le site en spécifiant son budget. 
+
+Entête :
+
+
+
+
+Formulaire recherche et carrousel(bootstrap) affichant des annonces:
+
+
+Des nouvelles annonces ajoutées :
+
+
+Quand on clique sur « voir », cette page montrant les détails de l’annonce s’affiche: 
+
+Enfin, le pied de page qui sera aussi le même pour toutes les autres pages.
+
+Achat :
+Cette page affiche la liste de toutes offres d’achat disponible ainsi que les demandes d’achat postées. Un formulaire permet de rechercher un offre d’achat suivant le goût et le budget disponible.
+
+
+
+Location:
+Même chose que l’achat, juste que la page est propre aux locations.
+
+
+
+
+
+
+
+
+Présentation :
+
+Cette page présente l’entreprise Immob-Porto. Cela permettra de faire connaître l’entreprise ainsi que les membres exécutifs. Pour l’instant, il n’y a que du lorem ipsum. Le contenu de la page sera actualisé dans les prochains jours.
+
+
+
+
+
+
+
+
+
+
+Nous Contactez :
+Cette page met à disposition un formulaire permettant de nous envoyer un message. Il sera utile pour joindre notre entreprise et pour nous poser des inquiétudes et des bugs.
+
+
+
+Espace personnel :
+Après authentification, vient la page « Espace personnel » J’ai pas finalisé cette page. Elle permettrait à un utilisateur de modifier son profil, faire de demandes, des offres ainsi que les statistiques d’interactions des autres utilisateurs avec ses annonces à lui. Pour l’instant voici comment elle se présente.
+
+
+Connexion :
+Apres connexion sur la barre de tache, disparaît « se connecter » et « s’inscrire » afin de laisser place à « espace personnel » et « se deconnecter »
+Voici le formulaire de connexion :
+
+
+
+Inscription :
+Le contrôleur de l’inscription me pose le problème lors de la validation du formulaire. Il n’arrive pas à vérifier la conformité des mots de passe. J’ai alors désactivé la confirmation, le temps de trouver une solution.
+
+
+
+
+Voilà en gros ce que j’ai pu faire pour l’instant, je n’ai pas encore ajouté les cas d’utilisations pour gérer les annonces savoir : Ajouter une annonce, modifier…
 
 Je suis toujours au niveau de la gestion des utilisateurs du site. Je vais continuer à travailler sur le projet jusqu’à sa finalisation et son déploiement sur un serveur.
 

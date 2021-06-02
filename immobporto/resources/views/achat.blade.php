@@ -3,10 +3,10 @@
 @section('mainpage')
         <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
             <ul class="nav navbar-nav">
-                <li class="nav-item m-x-1 on">
+                <li class="nav-item m-x-1">
                     <a class="nav-link" href="{{route('accueil')}}">Accueil</a>
                 </li>
-                <li class="nav-item m-x-1">
+                <li class="nav-item m-x-1 on">
                     <a class="nav-link" href="{{route('achat')}}">Achat</a>
                 </li>
                 <li class="nav-item m-x-1">

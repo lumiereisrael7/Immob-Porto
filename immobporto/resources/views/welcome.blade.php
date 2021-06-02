@@ -24,23 +24,6 @@
 
 <!-- End of the navigation -->
 
-
-            <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div>
                 <!-- Start of the jumbotron with main image -->
 <div class="jumbotron p-t-1 text-xs-center">
     <span class="pull-xs-right appeal landing">Vous aussi trouvez votre place !</span>
@@ -104,44 +87,44 @@
       <aside class="col-xs-12 col-lg-3 p-y-2" id="search_form">
         <h3 class="m-b-1 text-xs-center"><i class="fa fa-search-plus" aria-hidden="true"></i>Vous recherchez</h3>
 
-        <form>
-          <div class="form-group">
-            <select class="form-control">
-              <option>-Transaction-</option>
-              <option>Achat</option>
-              <option>Location</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <select class="form-control">
-              <option>-Bien recherché-</option>
-              <option>Maison</option>
-              <option>Appartement</option>
-              <option>Studio</option>
-              <option>Loft</option>
-              <option>Villa</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <input class="form-control" type="text" placeholder="Ville(s)">
-          </div>
-          <div class="form-group">
-            <select class="form-control">
-              <option>-Votre budget-</option>
-              <option>- 100 000</option>
-              <option>100 à 120 000</option>
-              <option>120 à 150 000</option>
-              <option>150 à 200 000</option>
-              <option>200 à 300 000</option>
-              <option>300 à 400 000</option>
-              <option>400 à 500 000</option>
-              <option>+ 500 000</option>
-            </select>
-          </div>
-          <button type="submit" class="btn" id="find_button">Trouver mon bien</button>
-        </form>
+            <form action="/recherche" method="POST">
+                <div class="form-group">
+                    <select class="form-control" name="transaction">
+                        <option>-Transaction-</option>
+                        <option>Achat</option>
+                        <option>Location</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" name="categorie">
+                        <option>-Bien recherché-</option>
+                        <option>Maison</option>
+                        <option>Appartement</option>
+                        <option>Studio</option>
+                        <option>Loft</option>
+                        <option>Villa</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Ville(s)" name="ville">
+                </div>
+                <div class="form-group">
+                    <select class="form-control" name="budget">
+                        <option>-Votre budget-</option>
+                        <option value="100000">- 100 000</option>
+                        <option value="120000">100 à 120 000</option>
+                        <option value="150000">120 à 150 000</option>
+                        <option value="200000">150 à 200 000</option>
+                        <option value="300000">200 à 300 000</option>
+                        <option value="300000">300 à 400 000</option>
+                        <option value="">400 à 500 000</option>
+                        <option>+ 500 000</option>
+                    </select>
+                </div>
 
-      </aside>
+                <button type="submit" class="btn" id="find_button">Trouver mon bien</button>
+            </form>
+        </aside>
     </div>
 
   </section>
@@ -234,6 +217,6 @@
   ~~~~~~~~~End of the main content~~~~~~~~~~~~~
 
   -->
-            </div>
+</div>
 
 @endsection
