@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+         Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.9.2" last-position="50,21" last-zoom="1" max-obj-count="4"
+	 default-schema="public" default-owner="postgres">
+<database name="new_database" is-template="false" allow-conns="true">
+</database>
+
+<schema name="public" layer="0" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<table name="utilisateurs" layer="0" collapse-mode="2" max-obj-count="9">
+	<schema name="public"/>
+	<position x="200" y="100"/>
+	<column name="code_personne" not-null="true">
+		<type name="serial" length="0"/>
+	</column>
+	<column name="nom" not-null="true">
+		<type name="varchar" length="0"/>
+	</column>
+	<column name="prenom" not-null="true">
+		<type name="varchar" length="0"/>
+	</column>
+	<column name="password" not-null="true">
+		<type name="varchar" length="0"/>
+	</column>
+	<column name="email">
+		<type name="varchar" length="0"/>
+	</column>
+	<column name="tel">
+		<type name="varchar" length="0"/>
+	</column>
+	<column name="role" not-null="true">
+		<type name="varchar" length="0"/>
+	</column>
+	<column name="adresse" not-null="true">
+		<type name="varchar" length="0"/>
+	</column>
+	<constraint name="email" type="uq-constr" table="public.utilisateurs">
+		<columns names="email" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="telephone" type="uq-constr" table="public.utilisateurs">
+		<columns names="tel" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="utilisateurs_pk" type="pk-constr" table="public.utilisateurs">
+		<columns names="code_personne" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="Annonce" layer="0" collapse-mode="2" max-obj-count="6">
+	<schema name="public"/>
+	<position x="740" y="60"/>
+	<column name="code_annonce" not-null="true">
+		<type name="serial" length="0"/>
+	</column>
+	<column name="code_personne" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="type" not-null="true">
+		<type name="varchar" length="0"/>
+	</column>
+	<column name="date_ajout" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="Descriptions" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<constraint name="Annonce_pk" type="pk-constr" table="public.&quot;Annonce&quot;">
+		<columns names="code_annonce" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="Offre" layer="0" collapse-mode="2" max-obj-count="3">
+	<schema name="public"/>
+	<position x="600" y="320"/>
+	<column name="code_annonce" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="prix" not-null="true">
+		<type name="money" length="0"/>
+	</column>
+	<column name="images" not-null="true">
+		<type name="bytea" length="0" dimension="1"/>
+	</column>
+	<constraint name="Offre_pk" type="pk-constr" table="public.&quot;Offre&quot;">
+		<columns names="code_annonce" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="Demande" layer="0" collapse-mode="2" max-obj-count="3">
+	<schema name="public"/>
+	<position x="880" y="320"/>
+	<column name="code_annonce" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="prix_min">
+		<type name="money" length="0"/>
+	</column>
+	<column name="prix_max" not-null="true">
+		<type name="money" length="0"/>
+	</column>
+	<constraint name="Demande_pk" type="pk-constr" table="public.&quot;Demande&quot;">
+		<columns names="code_annonce" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<constraint name="code_personne" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.utilisateurs" table="public.&quot;Annonce&quot;">
+	<columns names="code_personne" ref-type="src-columns"/>
+	<columns names="code_personne" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="code_offre" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.&quot;Annonce&quot;" table="public.&quot;Offre&quot;">
+	<columns names="code_annonce" ref-type="src-columns"/>
+	<columns names="code_annonce" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="code_demande" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.&quot;Annonce&quot;" table="public.&quot;Demande&quot;">
+	<columns names="code_annonce" ref-type="src-columns"/>
+	<columns names="code_annonce" ref-type="dst-columns"/>
+</constraint>
+
+<relationship name="ajoute" type="relfk" layer="0"
+	 src-table="public.&quot;Annonce&quot;"
+	 dst-table="public.utilisateurs" reference-fk="code_personne"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="6.67306" y="3.7786"/>
+	</label>
+</relationship>
+
+<relationship name="Offre_Annonce" type="relfk" layer="0"
+	 src-table="public.&quot;Offre&quot;"
+	 dst-table="public.&quot;Annonce&quot;" reference-fk="code_offre"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-75.3243" y="-31.8266"/>
+	</label>
+</relationship>
+
+<relationship name="Demande_Annonce" type="relfk" layer="0"
+	 src-table="public.&quot;Demande&quot;"
+	 dst-table="public.&quot;Annonce&quot;" reference-fk="code_demande"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="114.687" y="-20.1266"/>
+	</label>
+</relationship>
+
+</dbmodel>
