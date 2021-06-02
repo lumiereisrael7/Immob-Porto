@@ -1,3 +1,70 @@
-﻿Rapport projet Immob-Porto
+﻿
 
-Les diagrammes des cas d’utilisations et de classes sont fait dans un espace de travail modélio et est compressé et mis dans le dossier documentation. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Rapport projet Immob-Porto
+
+
+
+
+					Réalisé par :
+
+
+		GODONOU Israël Licence 3 Informatique IMSP
+
+
+					Professeur :
+
+				  Dr Sanda Tidjani
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pour le projet, j’ai eu à utiliser le framework Laravel, ainsi que des templates html, css, bootstrap4.
+ 
+Les diagrammes des cas d’utilisations et de classes sont fait dans un espace de travail modélio et est compressé et mis dans le dossier documentation. Donc pour l’avoir il faut avec modelio l’importer et l’ouvrir. Pour le modèl relationnel, cela a été fait avec pgmodeler. Toutefois une image de chaque diagrammes/modèle sera intégrée dans le dossier documentation et dans ce présent rapport. 
+
+Diagramme des cas d’utilisations
+
+Les différents cas d’utilisations montres les différentes fonctionnalités de l’application. Pour l’instant toutes les cas d’utilisations ne sont pas encore implémenté. Seuls ceux ayant rapport à un utilisateur ont été implémentés. Un utilisateur peut s’authentifier. 
+
+
+
+Diagramme des classes
+
+
+Voilà les classes identifiées. Pour passer au modèle relationnel, l’attribut de la classe administrateur migre vers sa super-classe utilisateur. Par contre pour l’héritage entre les classes Offres, Demandes et Annonces, J’ai conservé les trois classes et ai fait migré la clé primaire de la super classe vers les différentes classe ayant hérité de lui.
+
+Modèle
+
+
+Voilà le modèle relationnel.
+Pour l’instant je n’ai pas encore ajouté les cas d’utilisations pour gerer les annonces savoir : Ajouter une annonce, modifier…
+
+Je suis toujours au niveau de la gestion des utilisateurs du site. Je vais continuer à travailler sur le projet jusqu’à sa finalisation et son déploiement sur un serveur.
+
+
+Je tiens à vous remercier pour ce projet du fait qu’il m’a aidé à mettre en application les connaissances acquises lors du cours ainsi que la découverte du framework Laravel avec lequel nous pourront faire beaucoup d’autres projets. 
